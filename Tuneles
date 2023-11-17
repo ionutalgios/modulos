@@ -1,0 +1,89 @@
+git -c user.name='ionutalgios' -c user.email=isavin@ingesit.com commit -m "T20236604"
+
+NUEVO PROTOCOLO, EL VIERNES PASAR TODO A TST Y PRE
+
+
+
+CONSULTOR PGADMIN_____________________________________
+ssh ingeos@172.26.34.198 -L 6432:localhost:5432
+CONSULTOR PGADMIN_____________________________________                       
+
+CONEXIONES POR VPN_________________________________________________________________________
+PGADMIN__________________________________________________
+DES
+ssh ingeos@172.16.201.12 -p 22 -L 7432:localhost:5432
+TST
+ssh ingeos@192.168.201.111 -p 22 -L 2432:localhost:5432
+PREPROD
+ssh ingeos@192.168.201.211 -p 22 -L 3432:localhost:5432   
+PROD
+ssh ingeos@192.168.101.11 -p 22 -L 9432:localhost:5432 
+PGADMIN__________________________________________________
+
+DES
+ssh ingeos@172.16.201.12 -p 22 -L 5907:localhost:5901
+TST
+ssh ingeos@192.168.201.111 -p 22 -L 5903:localhost:5901
+PREPROD
+ssh ingeos@192.168.201.211 -p 22 -L 5905:localhost:5901
+PROD
+ssh ingeos@192.168.101.11 -p 22 -L 5906:localhost:5901
+
+ACCESO________________________
+194.224.42.212
+62.99.71.158
+VPN USER: isavin@ingesit.com
+VPN PASS: ureL2XMr&YVM
+ACCESO________________________
+CONEXIONES POR VPN_________________________________________________________________________
+
+
+ingeos-2010
+
+
+_______________________________IMPORTANTE SUBIDAS A PROD____________________________________
+Apuntate para hacer despues de las subidas a producción de IBIL
+Poner el string en <field name="fecha_prevista" string="Fecha solicitud"/>
+En la vista:
+
+https://erp.ibilcloud.com/web?debug=1#id=2051&action=26&model=ir.ui.view&view_type=form&menu_id=4
+
+
+GITHUB PASS
+ionutalgios
+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
+
+ACTUALIZAR SECUENCIA
+SELECT setval('purchase_type_id_seq', 305)
+
+Para solucionar error al actualizar modulos: duplicate key value violates unique constraint "ir_translation_pkey"
+DETAIL: Key (id)=(796870) already exists.
+
+SELECT MAX(id) FROM ir_translation
+SELECT nextval('ir_translation_id_seq')
+SELECT setval('ir_translation_id_seq', (SELECT MAX(id) FROM ir_translation)+1);
+
+
+SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE datname = 'ibil' AND pid <> pg_backend_pid();
+
+
+
+select * from res_partner where SUBSTRING(cif_sin_pais, 1, 2) in (select code from res_country)
+
+SI no se instala un modulo, ir a edicion masiva añadir la edicion masiva de cambiar estado y ponerlo a instalado, actualizar el modulo y quitar la edicion masiva.
+
+
+ssh ingeos@172.26.34.87	nginx ingeos en /etc/nginx/sites-enabled
+
+
+
+
+PENTAHO
+./pdi-ce-9.0.0.0-423/data-integration/spoon.sh
+
+
+No se ver ribbon: Solucionado: eliminar adjunto web_editor.summernote.js y regenerar paquetes.
+
+
+
+ 

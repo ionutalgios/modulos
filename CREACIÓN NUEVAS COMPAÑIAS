@@ -1,0 +1,31 @@
+CREACIÓN NUEVAS COMPAÑIAS:
+
+Vemos que hay un asistente para la creación de compañias: account_multicompany_easy_creation
+
+Vamos a partir de este modulo y añadirle las siguientes modificaciones a la vista:
+
+	-Ocultar en la pestaña de CUENTA de cuentas para abajo																								DONE
+	   Añadir check de Modos de pago 	por defecto a TRUE																								DONE
+	-Pestaña nueva: Datos compañia (Los datos del ticket P1496)																							DONE
+	-Pestaña nueva: Checks para:																														DONE
+	   Productos, metodologias, servicios	por defecto a TRUE
+	   Tarifas	por defecto a TRUE
+	   WS 	por defecto a TRUE
+	   Estructura documental	por defecto a TRUE
+	-Secuencias: Añadir por defecto las de IBIL 																										DONE
+	-Usuarios: Añadir campo configuracion_compania a res.users y filtrar en la vista del wizard por este campo y compañia ibil 							DONE
+
+Funcionalidades:
+	-Almacenes: falta tipo operacion bloqueo -> Desecho 																								DONE
+	-Ubicaciones: Entrada y Salida activarlas (estan archivadas) 																						DONE
+	-Modo de pago(account.payment.mode): Duplicar de ibil 																								DONE
+	-Cuentas analiticas:	-Cuota energia + "Letra compañia" 																							DONE
+							-Cuota fija + "Letra compañia"
+							-Cuota linea + "Letra compañia"
+							-Cuota Servicios + "Letra compañia"
+							-CUENTA ANALITICA IBIL "NUEVA COMPAÑIA" para compañia IBIL con cliente creado para nueva compañia
+	-Metodologias y servicios (por pentaho adecuar a v12) 																								FALTA POR HACER POR PENTAHO
+	-Productos y templates revisar como esta en v6 																										DONE
+	-Tarifas: duplicar las de ibil con la condicion de configuracion_compania a TRUE y compañia IBIL, con sus versiones correspondientes 				DONE
+	-Web services 																																		DONE
+	-Estructura documental 																																DONE
